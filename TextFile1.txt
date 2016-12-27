@@ -1,0 +1,31 @@
+﻿Button
+Content Control
+Menu
+ScrollBar
+Rectangle
+ScrollViewer
+StackPanel
+Seperator
+
+Have to attach the slider to 3 of the 4 sides in order to get correct resizing behavior
+  This also applies with the menu bar at the top
+The slider is wildly off kilter to notepads
+  Slider control is tiny (no text yet)
+Menu bar is grey, not white
+  Menu Items aren't restricted to the app
+  Have to double click on form to generate callback methods
+Commands
+  http://stackoverflow.com/a/16924631
+  Adding Custom Commands is way to difficult
+	Create static class to hold commands
+	Create static instances of RoutedUICommand
+	  Add in correct getters
+	Then access the command using "{namespace}:{class}:command" in xaml
+TextBox vs TextBlock
+  TextBlock is read-only, doesn't allow user editing
+  TextBox only supports single colors and formatting
+	May be fine for my purposes though (only concern is themeing and selection)
+  Might want to make a custom control
+    http://stackoverflow.com/questions/27973220/wpf-how-to-create-a-custom-textbox-with-validation-and-binding
+Default Behavior for Cut/Copy/Paste/Undo/Redo matches design
+  

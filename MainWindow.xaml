@@ -3,10 +3,75 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Notes"
+        xmlns:local="clr-namespace:Notes" xmlns:w="clr-namespace:Notes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Notes" Height="350" Width="525">
+    <Window.CommandBindings>
+        <CommandBinding Command="New" Executed="NewFileCommand"/>
+        <CommandBinding Command="Open" Executed="OpenFileCommand"/>
+        <CommandBinding Command="Save" Executed="SaveFileCommand"/>
+        <CommandBinding Command="SaveAs" Executed="SaveAsCommand"/>
+        <CommandBinding Command="Print" Executed="PrintCommand"/>
+        <CommandBinding Command="Delete" Executed="DeleteCommand"/>
+        <CommandBinding Command="Find" Executed="FindCommand"/>
+        <CommandBinding Command="Replace" Executed="ReplaceCommand"/>
+        <CommandBinding Command="Help" Executed="HelpCommand"/>
+        <CommandBinding Command="w:Commands.Goto" Executed="GotoCommand"/>
+        <CommandBinding Command="w:Commands.TimeDate" Executed="TimeDateCommand"/>
+        <CommandBinding Command="w:Commands.WordWrap" Executed="WordWrapCommand"/>
+        <CommandBinding Command="w:Commands.Font" Executed="FontCommand"/>
+        <CommandBinding Command="w:Commands.Status" Executed="StatusCommand"/>
+        <CommandBinding Command="w:Commands.About" Executed="AboutCommand"/>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="N" Modifiers="Ctrl" Command="New"/>
+        <KeyBinding Key="S" Modifiers="Ctrl+Shift" Command="SaveAs"/>
+        <KeyBinding Key="G" Modifiers="Ctrl" Command="w:Commands.Goto"/>
+    </Window.InputBindings>
     <Grid>
-        
+        <Menu x:Name="menu" Height="20" VerticalAlignment="Top" Margin="0,0,0,0">
+            <MenuItem Header="File">
+                <MenuItem Header="_New" HorizontalAlignment="Left" Width="180" Command="New" InputGestureText="Ctrl+N"/>
+                <MenuItem Header="_Open" HorizontalAlignment="Left" Width="180" Command="Open"/>
+                <MenuItem Header="_Save" HorizontalAlignment="Left" Width="180" Command="Save"/>
+                <MenuItem Header="_Save As" HorizontalAlignment="Left" Width="180" Command="SaveAs"/>
+                <Separator />
+                <MenuItem Header="_Page Setup" HorizontalAlignment="Left" Width="180"/>
+                <MenuItem Header="_Print" HorizontalAlignment="Left" Width="180" Command="Print"/>
+                <Separator />
+                <MenuItem Header="_Exit" HorizontalAlignment="Left" Width="180"/>
+            </MenuItem>
+            <MenuItem Header="Edit">
+                <MenuItem Header="_Redo" HorizontalAlignment="Left" Width="180" Command="Redo"/>
+                <MenuItem Header="_Undo" HorizontalAlignment="Left" Width="180" Command="Undo"/>
+                <Separator />
+                <MenuItem Header="_Cut" HorizontalAlignment="Left" Width="180" Command="Cut"/>
+                <MenuItem Header="_Copy" HorizontalAlignment="Left" Width="180" Command="Copy"/>
+                <MenuItem Header="_Paste" HorizontalAlignment="Left" Width="180" Command="Paste"/>
+                <MenuItem Header="_Delete" HorizontalAlignment="Left" Width="180" Command="Delete"/>
+                <Separator />
+                <MenuItem Header="_Find" HorizontalAlignment="Left" Width="180" Command="Find"/>
+                <MenuItem Header="_Replace" HorizontalAlignment="Left" Width="180" Command="Replace"/>
+                <MenuItem Header="_Goto" HorizontalAlignment="Left" Width="180" Command="w:Commands.Goto" InputGestureText="Ctrl+G"/>
+                <!--Goto: Ctrl-G-->
+            </MenuItem>
+            <MenuItem Header="Format">
+                <MenuItem Header="_Word Wrap" HorizontalAlignment="Left" Width="180" Command="w:Commands.WordWrap"/>
+            </MenuItem>
+            <MenuItem Header="View">
+                <MenuItem Header="_Font" HorizontalAlignment="Left" Width="180" Command="w:Commands.Font"/>
+                <Separator/>
+                <MenuItem Header="_Status Bar" HorizontalAlignment="Left" Width="180" Command="w:Commands.Status"/>
+                <MenuItem Header="_Time/Date" HorizontalAlignment="Left" Width="180" Command="w:Commands.TimeDate"/>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="_View Help" HorizontalAlignment="Left" Width="180" Command="Help"/>
+                <MenuItem Header="_About Notes" HorizontalAlignment="Left" Width="180" Command="w:Commands.About"/>
+            </MenuItem>
+        </Menu>
+        <ScrollBar x:Name="scrollBar" Margin="0,17,0,-0.333" Width="9" HorizontalAlignment="Right"/>
+        <TextBox x:Name="textBox" BorderThickness="0" AcceptsReturn="True" Margin="0,20,17.667,15.667" TextWrapping="Wrap"/>
+        <Canvas HorizontalAlignment="Left" Height="100" Margin="-29,8,0,0" VerticalAlignment="Top" Width="100"/>
+        <StatusBar Height="16" Margin="0,0,17.667,-0.333" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>

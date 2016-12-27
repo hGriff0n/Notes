@@ -8,3 +8,6 @@ The created application (Notes) should:
     2) Add in better Ctrl-Z/Ctrl-Y support
     3) Treat \n correctly on windows
     4) Not have a tab issue when converting with mkpost.rb
+
+Some optional ideas:
+	1) Support textmate colorization (ala VS Code)
