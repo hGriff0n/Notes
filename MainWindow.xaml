@@ -59,9 +59,7 @@
             </MenuItem>
             <MenuItem Header="Format">
                 <MenuItem Header="_Word Wrap" HorizontalAlignment="Left" Width="180" Command="w:Commands.WordWrap"/>
-            </MenuItem>
-            <MenuItem Header="View">
-                <MenuItem Header="_Font" HorizontalAlignment="Left" Width="180" Command="w:Commands.Font"/>
+                <MenuItem Header="_Text Styling" HorizontalAlignment="Left" Width="180" Command="w:Commands.Font"/>
                 <Separator/>
                 <MenuItem Header="_Status Bar" HorizontalAlignment="Left" Width="180" Command="w:Commands.Status"/>
                 <MenuItem Header="_Time/Date" HorizontalAlignment="Left" Width="180" Command="w:Commands.TimeDate"/>
@@ -72,7 +70,7 @@
             </MenuItem>
         </Menu>
         <ScrollBar x:Name="scrollBar" Margin="0,17,0,-0.333" Width="9" HorizontalAlignment="Right"/>
-        <TextBox x:Name="textBox" BorderThickness="0" AcceptsReturn="True" Margin="0,20,17.667,15.667" TextWrapping="Wrap"/>
+        <TextBox x:Name="textBox" BorderThickness="0" AcceptsReturn="True" Margin="2.5,22.5,20.167,18.167" TextWrapping="Wrap"/>
         <Canvas HorizontalAlignment="Left" Height="100" Margin="-29,8,0,0" VerticalAlignment="Top" Width="100"/>
         <StatusBar Height="16" Margin="0,0,17.667,-0.333" VerticalAlignment="Bottom"/>
     </Grid>
