@@ -17,13 +17,19 @@ namespace Notes
 {
     /* TODO:
      * Move Command logic into a separate class (once I've figured out how to add all commands)
+     * Need to add in ability to set tab behavior (width, replace with spaces)
+     * Implement all of the commands in the menu bar
+     * Improve the appearance of the drop-down menus
+     * Add in ability to have multiple notes open at once (needs gui)
+     * Get the scroll bar working properly
      */
-     
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int tabSize = 4;
 
         public MainWindow()
         {
@@ -32,12 +38,12 @@ namespace Notes
             dispatcherTimer.Tick += new EventHandler(TimerTick);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Start();
-
         }
 
         private void TimerTick(object sender, EventArgs e)
         {
             // The idea here is to automatically update the event tracker with recent changes after a short time
+            // But Ctrl-Z pretty much already does this
 
             // Updating the Label which displays the current second
             //lblSeconds.Content = DateTime.Now.Second;
@@ -65,12 +71,12 @@ namespace Notes
 
         private void SaveFileCommand(object sender, ExecutedRoutedEventArgs e)
         {
-
+            
         }
 
         private void SaveAsCommand(object sender, ExecutedRoutedEventArgs e)
         {
-
+            
         }
 
         private void PrintCommand(object sender, ExecutedRoutedEventArgs e)
@@ -126,6 +132,15 @@ namespace Notes
         private void AboutCommand(Object sender, ExecutedRoutedEventArgs e)
         {
 
+        }
+
+        private void TabCommand(Object sender, ExecutedRoutedEventArgs e)
+        {
+            // Unfortunately, ' ' is half the size of any other character in the default font
+            var pos = textBox.CaretIndex;
+            textBox.Text = textBox.Text.Insert(pos, new string(' ', tabSize));
+            textBox.CaretIndex = pos + tabSize + 1;
+            e.Handled = true;
         }
     }
 }

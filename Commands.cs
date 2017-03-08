@@ -52,5 +52,13 @@ namespace Notes
                 return aboutCmd;
             }
         }
+
+        private static readonly RoutedUICommand tabCmd = new RoutedUICommand("description", "Tab", typeof(Commands));
+        public static RoutedUICommand Tab
+        {
+            get {
+                return tabCmd;
+            }
+        }
     }
 }

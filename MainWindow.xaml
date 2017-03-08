@@ -22,11 +22,13 @@
         <CommandBinding Command="w:Commands.Font" Executed="FontCommand"/>
         <CommandBinding Command="w:Commands.Status" Executed="StatusCommand"/>
         <CommandBinding Command="w:Commands.About" Executed="AboutCommand"/>
+        <CommandBinding Command="w:Commands.Tab" Executed="TabCommand"/>
     </Window.CommandBindings>
     <Window.InputBindings>
         <KeyBinding Key="N" Modifiers="Ctrl" Command="New"/>
         <KeyBinding Key="S" Modifiers="Ctrl+Shift" Command="SaveAs"/>
         <KeyBinding Key="G" Modifiers="Ctrl" Command="w:Commands.Goto"/>
+        <KeyBinding Key="Tab" Command="w:Commands.Tab"/>
     </Window.InputBindings>
     <Grid>
         <Menu x:Name="menu" Height="20" VerticalAlignment="Top" Margin="0,0,0,0">
