@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 namespace Notes
 {
     /* TODO:
+     * Styling changes inadvertently broke the highlighting of some edit options
      * Move Command logic into a separate class (once I've figured out how to add all commands)
      * Need to add in ability to set tab behavior (width, replace with spaces)
      * Implement all of the commands in the menu bar
@@ -38,9 +39,6 @@ namespace Notes
             dispatcherTimer.Tick += new EventHandler(TimerTick);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Start();
-
-            textBox.FontFamily = new FontFamily("Consolas");
-            //textBox.FontStretch = Expanded;
         }
 
         private void TimerTick(object sender, EventArgs e)
@@ -117,7 +115,7 @@ namespace Notes
 
         }
 
-        private void WordWrapCommand(Object sender, ExecutedRoutedEventArgs e)
+        private void PageStylingCommand(Object sender, ExecutedRoutedEventArgs e)
         {
 
         }

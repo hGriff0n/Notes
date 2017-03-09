@@ -21,11 +21,11 @@ namespace Notes
             }
         }
 
-        private static readonly RoutedUICommand wwCmd = new RoutedUICommand("description", "WordWrap", typeof(Commands));
-        public static RoutedUICommand WordWrap
+        private static readonly RoutedUICommand psCmd = new RoutedUICommand("description", "WordWrap", typeof(Commands));
+        public static RoutedUICommand PageStyling
         {
             get {
-                return wwCmd;
+                return psCmd;
             }
         }
 
