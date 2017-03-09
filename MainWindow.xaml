@@ -70,7 +70,8 @@
             </MenuItem>
         </Menu>
         <ScrollBar x:Name="scrollBar" Margin="0,17,0,-0.333" Width="9" HorizontalAlignment="Right"/>
-        <TextBox x:Name="textBox" BorderThickness="0" AcceptsReturn="True" Margin="2.5,22.5,20.167,18.167" TextWrapping="Wrap"/>
+        <TextBox x:Name="textBox" BorderThickness="0" AcceptsReturn="True" Margin="4,22.5,20.167,18.167" TextWrapping="Wrap" FontStretch="Expanded"/>
+        <!--<RichTextBox x:Name="textBox" BorderThickness="0" AcceptsReturn="True" Margin="2.5,22.5,20.167,18.167"/>-->
         <Canvas HorizontalAlignment="Left" Height="100" Margin="-29,8,0,0" VerticalAlignment="Top" Width="100"/>
         <StatusBar Height="16" Margin="0,0,17.667,-0.333" VerticalAlignment="Bottom"/>
     </Grid>

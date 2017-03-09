@@ -38,6 +38,9 @@ namespace Notes
             dispatcherTimer.Tick += new EventHandler(TimerTick);
             dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
             dispatcherTimer.Start();
+
+            textBox.FontFamily = new FontFamily("Consolas");
+            //textBox.FontStretch = Expanded;
         }
 
         private void TimerTick(object sender, EventArgs e)
@@ -136,10 +139,14 @@ namespace Notes
 
         private void TabCommand(Object sender, ExecutedRoutedEventArgs e)
         {
-            // Unfortunately, ' ' is half the size of any other character in the default font
             var pos = textBox.CaretIndex;
             textBox.Text = textBox.Text.Insert(pos, new string(' ', tabSize));
-            textBox.CaretIndex = pos + tabSize + 1;
+            textBox.CaretIndex = pos + tabSize;
+
+            // Tab insertion (oddly equal to 5 spaces)
+            //textBox.Text = textBox.Text.Insert(pos, "\t");
+            //textBox.CaretIndex = pos + 1;
+
             e.Handled = true;
         }
     }
