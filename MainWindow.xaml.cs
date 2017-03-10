@@ -16,13 +16,12 @@ using System.Windows.Shapes;
 namespace Notes
 {
     /* TODO:
+     * Get the scroll bar working properly
      * Also need to find a way to move the sub-menus into the app window
      * Move Command logic into a separate class (once I've figured out how to add all commands)
-     * Find a way to add in tab "indenting" (so a tab doesn't just move 4 spaces)
      * Implement all of the commands in the menu bar
      * Improve the appearance of the drop-down menus
      * Add in ability to have multiple notes open at once (needs gui)
-     * Get the scroll bar working properly
      */
 
     /// <summary>
@@ -139,12 +138,22 @@ namespace Notes
         private void TabCommand(Object sender, ExecutedRoutedEventArgs e)
         {
             var pos = textBox.CaretIndex;
+
+            // Insert spaces instead of tabs
             textBox.Text = textBox.Text.Insert(pos, new string(' ', tabSize));
             textBox.CaretIndex = pos + tabSize;
+
+            // Insert spaces to alignment
+            //var lineStart = textBox.GetCharacterIndexFromLineIndex(textBox.GetLineIndexFromCharacterIndex(pos));
+            //var indent = tabSize * ((pos - lineStart + tabSize) / tabSize);
+            //textBox.Text = textBox.Text.Insert(pos, new string(' ', indent - (pos - lineStart)));
+            //textBox.CaretIndex = lineStart + indent;
 
             // Tab insertion (oddly equal to 5 spaces)
             //textBox.Text = textBox.Text.Insert(pos, "\t");
             //textBox.CaretIndex = pos + 1;
+
+            // Unfortunately, I don't think I can have tabbing to alignment
 
             e.Handled = true;
         }
