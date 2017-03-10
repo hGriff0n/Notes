@@ -23,6 +23,11 @@
         <CommandBinding Command="w:Commands.Status" Executed="StatusCommand"/>
         <CommandBinding Command="w:Commands.About" Executed="AboutCommand"/>
         <CommandBinding Command="w:Commands.Tab" Executed="TabCommand"/>
+        <CommandBinding Command="Redo" Executed="DoNothingDefault"/>
+        <CommandBinding Command="Undo" Executed="DoNothingDefault"/>
+        <CommandBinding Command="Cut" Executed="DoNothingDefault"/>
+        <CommandBinding Command="Copy" Executed="DoNothingDefault"/>
+        <CommandBinding Command="Paste" Executed="DoNothingDefault"/>
     </Window.CommandBindings>
     <Window.InputBindings>
         <KeyBinding Key="N" Modifiers="Ctrl" Command="New"/>
@@ -33,40 +38,40 @@
     <Grid>
         <Menu x:Name="menu" Height="20" VerticalAlignment="Top" Margin="0,0,0,0" Style="{DynamicResource MenuStyle1}">
             <MenuItem Header="File" Template="{DynamicResource MenuItemControlTemplate2}">
-                <MenuItem Header="_New" Command="New" InputGestureText="Ctrl+N" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
-                <MenuItem Header="_Open" Command="Open" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
-                <MenuItem Header="_Save" Command="Save" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
-                <MenuItem Header="_Save As" Command="SaveAs" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="New" Command="New" InputGestureText="Ctrl+N" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="Open" Command="Open" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="Save" Command="Save" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="Save As" Command="SaveAs" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
                 <Separator Style="{DynamicResource SeparatorStyle1}"/>
-                <MenuItem Header="_Page Setup" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
-                <MenuItem Header="_Print" Command="Print" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="Page Setup" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="Print" Command="Print" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
                 <Separator Style="{DynamicResource SeparatorStyle1}"/>
-                <MenuItem Header="_Exit" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="Exit" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
             </MenuItem>
             <MenuItem Header="Edit" Template="{DynamicResource MenuItemControlTemplate2}">
-                <MenuItem Header="_Redo" Command="Redo" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
-                <MenuItem Header="_Undo" Command="Undo" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="Redo" Command="Redo" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="Undo" Command="Undo" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
                 <Separator Style="{DynamicResource SeparatorStyle1}"/>
-                <MenuItem Header="_Cut" Command="Cut" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
-                <MenuItem Header="_Copy" Command="Copy" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
-                <MenuItem Header="_Paste" Command="Paste" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
-                <MenuItem Header="_Delete" Command="Delete" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="Cut" Command="Cut" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="Copy" Command="Copy" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="Paste" Command="Paste" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="Delete" Command="Delete" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
                 <Separator Style="{DynamicResource SeparatorStyle1}"/>
-                <MenuItem Header="_Find" Command="Find" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
-                <MenuItem Header="_Replace" Command="Replace" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
-                <MenuItem Header="_Goto" Command="w:Commands.Goto" InputGestureText="Ctrl+G" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="Find" Command="Find" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="Replace" Command="Replace" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="Goto" Command="w:Commands.Goto" InputGestureText="Ctrl+G" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
                 <!--Goto: Ctrl-G-->
             </MenuItem>
             <MenuItem Header="Format" Template="{DynamicResource MenuItemControlTemplate2}">
-                <MenuItem Header="_Page Styling" Command="w:Commands.PageStyling" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
-                <MenuItem Header="_Text Styling" Command="w:Commands.Font" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="Page Styling" Command="w:Commands.PageStyling" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="Text Styling" Command="w:Commands.Font" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
                 <Separator/>
-                <MenuItem Header="_Status Bar" Command="w:Commands.Status" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
-                <MenuItem Header="_Time/Date" Command="w:Commands.TimeDate" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="Status Bar" Command="w:Commands.Status" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="Time/Date" Command="w:Commands.TimeDate" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
             </MenuItem>
             <MenuItem Header="Help" Template="{DynamicResource MenuItemControlTemplate2}">
-                <MenuItem Header="_View Help" Command="Help" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
-                <MenuItem Header="_About Notes" Command="w:Commands.About" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="View Help" Command="Help" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
+                <MenuItem Header="About Notes" Command="w:Commands.About" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
             </MenuItem>
         </Menu>
         <ScrollBar x:Name="scrollBar" Margin="0,17,0,-0.333" Width="9" HorizontalAlignment="Right"/>
@@ -195,7 +200,7 @@
                     <Path x:Name="GlyphPanel" Data="F1M10,1.2L4.7,9.1 4.5,9.1 0,5.2 1.3,3.5 4.3,6.1 8.3,0 10,1.2z" Fill="{TemplateBinding Foreground}" FlowDirection="LeftToRight" Margin="3" Visibility="Collapsed" VerticalAlignment="Center"/>
                     <ContentPresenter x:Name="ContentPresenter" ContentTemplate="{TemplateBinding HeaderTemplate}" Content="{TemplateBinding Header}" Grid.Column="1" ContentStringFormat="{TemplateBinding HeaderStringFormat}" ContentSource="Header" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                     <Popup x:Name="PART_Popup" AllowsTransparency="True" Focusable="False" IsOpen="{Binding IsSubmenuOpen, RelativeSource={RelativeSource TemplatedParent}}" PopupAnimation="{DynamicResource {x:Static SystemParameters.MenuPopupAnimationKey}}" Placement="Bottom">
-                        <Border x:Name="SubMenuBorder" BorderBrush="#FF999999" BorderThickness="1" Background="#FFF0F0F0" Padding="2">
+                        <Border x:Name="SubMenuBorder" BorderBrush="#FF999999" BorderThickness="1" Background="#FFF0F0F0" Padding="2" HorizontalAlignment="Right">
                             <ScrollViewer x:Name="SubMenuScrollViewer" Style="{DynamicResource {ComponentResourceKey ResourceId=MenuScrollViewer, TypeInTargetAssembly={x:Type FrameworkElement}}}">
                                 <Grid x:Name="Grid1" RenderOptions.ClearTypeHint="Enabled">
                                     <Canvas x:Name="Canvas" HorizontalAlignment="Left" Height="0" VerticalAlignment="Top" Width="0">

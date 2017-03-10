@@ -16,7 +16,6 @@ using System.Windows.Shapes;
 namespace Notes
 {
     /* TODO:
-     * Styling changes inadvertently broke the highlighting of some edit options
      * Also need to find a way to move the sub-menus into the app window
      * Move Command logic into a separate class (once I've figured out how to add all commands)
      * Find a way to add in tab "indenting" (so a tab doesn't just move 4 spaces)
@@ -149,5 +148,7 @@ namespace Notes
 
             e.Handled = true;
         }
+
+        private void DoNothingDefault(Object sender, ExecutedRoutedEventArgs e) {}
     }
 }
