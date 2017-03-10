@@ -76,6 +76,8 @@
         </Menu>
         <TextBox x:Name="textBox" BorderThickness="0" AcceptsReturn="True" Margin="4,20,0.333,15.667" TextWrapping="Wrap" FontFamily="Consolas" VerticalScrollBarVisibility="Visible" Padding="0,4,2,4"/>
         <StatusBar Height="16" Margin="0,0,0.333,-0.333" VerticalAlignment="Bottom"/>
+        <!--<Expander x:Name="expander" Margin="0,0,17.942,0" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Width="23.668"/>-->
+        <!--<ComboBox x:Name="comboBox" Width="91.5" HorizontalAlignment="Right" Margin="0,0,17.776,0" Text="New File" Height="20" VerticalAlignment="Top"/>-->
     </Grid>
 
     <!-- Resources Generated In Blend -->

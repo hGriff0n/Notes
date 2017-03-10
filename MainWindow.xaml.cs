@@ -22,6 +22,7 @@ namespace Notes
      *      - This includes moving them into the app window
      * Add in ability to have multiple notes open at once (needs gui)
      * Figure out what should go on the status bar
+     * Add in Ctrl+W to close file, Ctrl+Shift+W to exit all
      */
 
     /// <summary>
@@ -67,12 +68,17 @@ namespace Notes
 
         private void OpenFileCommand(object sender, ExecutedRoutedEventArgs e)
         {
-
+            // TODO: Needs a file opener
+            currentFile = @"C:\Users\ghoop\Desktop\Notes\Notes\test.txt";
+            textBox.Text = System.IO.File.ReadAllText(currentFile);
         }
 
         private void SaveFileCommand(object sender, ExecutedRoutedEventArgs e)
         {
-            
+            if (currentFile != "")
+            {
+                System.IO.File.WriteAllText(currentFile, textBox.Text);
+            }
         }
 
         private void SaveAsCommand(object sender, ExecutedRoutedEventArgs e)

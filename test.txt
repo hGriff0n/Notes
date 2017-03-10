@@ -1,4 +1,4 @@
-﻿Button
+Button
 Content Control
 Menu
 ScrollBar
@@ -20,12 +20,4 @@ Commands
 	Create static class to hold commands
 	Create static instances of RoutedUICommand
 	  Add in correct getters
-	Then access the command using "{namespace}:{class}:command" in xaml
-TextBox vs TextBlock
-  TextBlock is read-only, doesn't allow user editing
-  TextBox only supports single colors and formatting
-	May be fine for my purposes though (only concern is themeing and selection)
-  Might want to make a custom control
-    http://stackoverflow.com/questions/27973220/wpf-how-to-create-a-custom-textbox-with-validation-and-binding
-Default Behavior for Cut/Copy/Paste/Undo/Redo matches design
-  
+	Then access the command using "{namespace}:{class}:command" in xaml  
