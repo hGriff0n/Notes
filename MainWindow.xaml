@@ -74,9 +74,8 @@
                 <MenuItem Header="About Notes" Command="w:Commands.About" Style="{DynamicResource MenuItemStyle1}" Template="{DynamicResource MenuItemControlTemplate1}"/>
             </MenuItem>
         </Menu>
-        <ScrollBar x:Name="scrollBar" Margin="0,17,0,-0.333" Width="9" HorizontalAlignment="Right"/>
-        <TextBox x:Name="textBox" BorderThickness="0" AcceptsReturn="True" Margin="4,22.5,20.167,18.167" TextWrapping="Wrap" FontFamily="Consolas"/>
-        <StatusBar Height="16" Margin="0,0,17.667,-0.333" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="textBox" BorderThickness="0" AcceptsReturn="True" Margin="4,20,0.333,15.667" TextWrapping="Wrap" FontFamily="Consolas" VerticalScrollBarVisibility="Visible" Padding="0,4,2,4"/>
+        <StatusBar Height="16" Margin="0,0,0.333,-0.333" VerticalAlignment="Bottom"/>
     </Grid>
 
     <!-- Resources Generated In Blend -->

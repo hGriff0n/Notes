@@ -16,12 +16,12 @@ using System.Windows.Shapes;
 namespace Notes
 {
     /* TODO:
-     * Get the scroll bar working properly
-     * Also need to find a way to move the sub-menus into the app window
      * Move Command logic into a separate class (once I've figured out how to add all commands)
      * Implement all of the commands in the menu bar
      * Improve the appearance of the drop-down menus
+     *      - This includes moving them into the app window
      * Add in ability to have multiple notes open at once (needs gui)
+     * Figure out what should go on the status bar
      */
 
     /// <summary>
