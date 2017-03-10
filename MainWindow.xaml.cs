@@ -17,8 +17,9 @@ namespace Notes
 {
     /* TODO:
      * Styling changes inadvertently broke the highlighting of some edit options
+     * Also need to find a way to move the sub-menus into the app window
      * Move Command logic into a separate class (once I've figured out how to add all commands)
-     * Need to add in ability to set tab behavior (width, replace with spaces)
+     * Find a way to add in tab "indenting" (so a tab doesn't just move 4 spaces)
      * Implement all of the commands in the menu bar
      * Improve the appearance of the drop-down menus
      * Add in ability to have multiple notes open at once (needs gui)
@@ -31,6 +32,7 @@ namespace Notes
     public partial class MainWindow : Window
     {
         private int tabSize = 4;
+        private String currentFile = "";
 
         public MainWindow()
         {

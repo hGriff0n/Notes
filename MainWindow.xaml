@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Notes" xmlns:w="clr-namespace:Notes"
         mc:Ignorable="d"
-        Title="Notes" Height="350" Width="525">
+        Title="Notes" Height="480" Width="560">
     <Window.CommandBindings>
         <CommandBinding Command="New" Executed="NewFileCommand"/>
         <CommandBinding Command="Open" Executed="OpenFileCommand"/>
@@ -142,7 +142,7 @@
             <Border x:Name="templateRoot" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition SharedSizeGroup="MenuItemIconColumnGroup" Width="0"/>
+                        <ColumnDefinition SharedSizeGroup="MenuItemIconColumnGroup" Width="7"/>
                         <ColumnDefinition/>
                         <ColumnDefinition SharedSizeGroup="MenuItemIGTColumnGroup" Width="Auto"/>
                     </Grid.ColumnDefinitions>
