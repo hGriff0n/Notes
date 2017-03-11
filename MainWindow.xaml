@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Notes" xmlns:w="clr-namespace:Notes"
         mc:Ignorable="d"
-        Title="Notes" Height="480" Width="560">
+        Title="Notes" Height="709" Width="963">
     <Window.CommandBindings>
         <CommandBinding Command="New" Executed="NewFileCommand"/>
         <CommandBinding Command="Open" Executed="OpenFileCommand"/>
@@ -23,11 +23,6 @@
         <CommandBinding Command="w:Commands.Status" Executed="StatusCommand"/>
         <CommandBinding Command="w:Commands.About" Executed="AboutCommand"/>
         <CommandBinding Command="w:Commands.Tab" Executed="TabCommand"/>
-        <CommandBinding Command="Redo" Executed="DoNothingDefault"/>
-        <CommandBinding Command="Undo" Executed="DoNothingDefault"/>
-        <CommandBinding Command="Cut" Executed="DoNothingDefault"/>
-        <CommandBinding Command="Copy" Executed="DoNothingDefault"/>
-        <CommandBinding Command="Paste" Executed="DoNothingDefault"/>
     </Window.CommandBindings>
     <Window.InputBindings>
         <KeyBinding Key="N" Modifiers="Ctrl" Command="New"/>

@@ -17,6 +17,7 @@ using Microsoft.Win32;
 namespace Notes
 {
     /* TODO:
+     * Add in "undo stack size" counter
      * Implement NewFile command
      *      - Need a way to check last save
      * Implement DeleteCommand
