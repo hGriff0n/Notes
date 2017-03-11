@@ -12,17 +12,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace Notes
 {
     /* TODO:
-     * Move Command logic into a separate class (once I've figured out how to add all commands)
-     * Implement all of the commands in the menu bar
+     * Implement NewFile command
+     *      - Need a way to check last save
+     * Implement DeleteCommand
+     * Implement Find Command
+     * Implement Replace Command
+     * Implement other menu commands
      * Improve the appearance of the drop-down menus
      *      - This includes moving them into the app window
      * Add in ability to have multiple notes open at once (needs gui)
+     *      - Add in Ctrl+W to close file, Ctrl+Shift+W to exit all
      * Figure out what should go on the status bar
-     * Add in Ctrl+W to close file, Ctrl+Shift+W to exit all
      */
 
     /// <summary>
@@ -68,22 +73,42 @@ namespace Notes
 
         private void OpenFileCommand(object sender, ExecutedRoutedEventArgs e)
         {
-            // TODO: Needs a file opener
-            currentFile = @"C:\Users\ghoop\Desktop\Notes\Notes\test.txt";
-            textBox.Text = System.IO.File.ReadAllText(currentFile);
+            // Setting initial directory
+            // dialog.InitialDirectory = <directory> (Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+
+            // Enable multiple selection
+            // dialog.Multiselect = true;
+
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            if (dialog.ShowDialog() == true)
+            {
+                currentFile = dialog.FileName;
+                textBox.Text = System.IO.File.ReadAllText(currentFile);
+            }
         }
 
         private void SaveFileCommand(object sender, ExecutedRoutedEventArgs e)
         {
             if (currentFile != "")
-            {
                 System.IO.File.WriteAllText(currentFile, textBox.Text);
-            }
+            else
+                SaveAsCommand(sender, e);
         }
 
         private void SaveAsCommand(object sender, ExecutedRoutedEventArgs e)
         {
-            
+            // DefaultExt
+            // AddExtension [true]
+            // ValidateNames [true]
+
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            if (dialog.ShowDialog() == true)
+            {
+                currentFile = dialog.FileName;
+                SaveFileCommand(sender, e);
+            }
         }
 
         private void PrintCommand(object sender, ExecutedRoutedEventArgs e)
